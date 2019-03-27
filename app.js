@@ -9,7 +9,9 @@ function eventListeners() {
 	document.querySelector('#form').addEventListener('submit', newTweet);
 	
 	// Remove tweet from the list
-	tweetList.addEventListener('click', removeTweet);
+    tweetList.addEventListener('click', removeTweet);
+    
+    document.addEventListener('DOMContentLoaded', localStorageOnLoad);
 }
 
 //Functions
@@ -50,7 +52,7 @@ function addTweetLocalStorage(tweet){
 		// Add the tweet into the array
 		tweets.push(tweet);
 	// Convert array into string
-	localStorage.setItem('tweets', JASON.stringify(tweets));
+	localStorage.setItem('tweets', JSON.stringify(tweets));
 }
 
 function getTweetsFromStorage(){
@@ -63,4 +65,9 @@ function getTweetsFromStorage(){
 		tweets = JSON.parse(tweetsLS);
 	}
 	return tweets;
+}
+
+function localStorageOnLoad(){
+    let tweets = getTweetsFromStorage();
+    console.log(tweets);
 }
