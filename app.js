@@ -5,6 +5,8 @@ const tweetList = document.getElementById('tweet-list');
 //Event Listeners
 eventListeners();
 function eventListeners() {
+	//User info submission
+	document.querySelector('#userForm').addEventListener('submit', createUser);
 	//  Form Submission 
 	document.querySelector('#form').addEventListener('submit', newTweet);
 	
@@ -15,6 +17,14 @@ function eventListeners() {
 }
 
 //Functions
+
+function createUser(e){
+	e.preventDefault();
+
+	const nameInput = document.getElementById('nameInput').value;
+	const imgUrlInput = document.getElementById('imgUrlInput').value;
+	console.log(nameInput + imgUrlInput);
+}
 
 function newTweet(e) {
 	e.preventDefault();

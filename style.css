@@ -1,3 +1,7 @@
+body{
+    background-color:#000;
+    color:#dedede;
+}
 h1, h2 {
     text-align: center;
 }
@@ -11,4 +15,11 @@ h1, h2 {
     cursor: pointer;
     color: red;
     font-weight: bold;
+}
+
+.log-in{
+    background-color:white;
+    width:40%;
+    margin:0 auto;
+    padding:50px;
 }
